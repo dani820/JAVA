@@ -16,5 +16,5 @@ public class TwoDimension2 {
 		System.out.println(arr.length);
 		System.out.println(arr[0].length);
 		
-	}
+	} 
 }

@@ -20,6 +20,6 @@ public class StudentArrayList {
 		for(Student std1 : std) {
 			std1.showStudentInfo();
 		}
-		
+		 
 	}
 }

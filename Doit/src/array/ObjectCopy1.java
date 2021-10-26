@@ -12,7 +12,7 @@ public class ObjectCopy1 {
 		System.out.println("1");
 		for(int i = 0; i < bookArray1.length; i++) {
 			bookArray1[i].showBookInfo();
-		}
+		} 
 
 		bookArray2[0] = new Book();
 		bookArray2[1] = new Book();

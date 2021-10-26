@@ -9,5 +9,5 @@ public class ArrayCopy {
 		for(int i = 0; i < array2.length; i++) {
 			System.out.println(array2[i]);
 		}
-	}
+	} 
 }

@@ -13,4 +13,4 @@ public class CharArray {
 			System.out.println(alphabets[i] + ", " + (int)alphabets[i]);
 		}
 	}
-}
+} 

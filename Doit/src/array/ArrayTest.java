@@ -9,5 +9,5 @@ public class ArrayTest {
 			sum += num[i];
 		}
 		System.out.println(sum);
-	}
+	} 
 }
