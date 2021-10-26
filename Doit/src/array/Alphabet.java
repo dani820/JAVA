@@ -12,6 +12,6 @@ public class Alphabet {
 				System.out.print(alphabets[i][j]);
 			}
 			System.out.println();
-		} 
+		}  
 	}
 }
