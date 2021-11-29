@@ -16,6 +16,7 @@ public interface Calc {
 	// 디폴트 메소드
 	default void description() {
 		System.out.println("정수 계산기를 구현합니다.");
+//		myMethod();
 	}
 	
 	// 정적 메소드
@@ -25,7 +26,17 @@ public interface Calc {
 		for(int i : arr) {
 			total += i;
 		}
-		
+//		myStaticMethod();
 		return total;
 	}
+	
+//	Java 9 부터 가능
+//	private void myMethod() {
+//		System.out.println("private 메소드입니다.");
+//	}
+//	
+//	Java 9 부터 가능
+//	private static void myStaticMethod() {
+//		System.out.println("private static 메소드입니다.");
+//	}
 }
