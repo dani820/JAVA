@@ -25,4 +25,13 @@ public class CompleteCalc extends Calculator {
 		return num * num;
 	}
 
+	@Override
+	public void description() {
+		super.description(); // 인터페이스에 선언한 메소드
+		// 위 코드를 사용하지 않을거라면 지우고 새 코드 작성하기
+		// CompleteCalc 클래스로 인스턴스를 생성하여 호출하면 재정의된 메소드가 호출된다.
+	}
+	
+	
+
 }

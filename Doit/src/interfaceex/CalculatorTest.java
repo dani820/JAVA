@@ -13,6 +13,10 @@ public class CalculatorTest {
 		System.out.println(calc.divide(num1, num2));
 		System.out.println(calc.square(num1));
 		calc.showInfo();
+		calc.description(); // 디폴트 메소드 호출
+		
+		int arr[] = {1, 2, 3, 4, 5};
+		System.out.println(Calc.total(arr)); // 정적 메소드 호출하여 결과 출력
 		
 		Calc calc1 = new CompleteCalc();
 		Calc newCalc = calc1;
