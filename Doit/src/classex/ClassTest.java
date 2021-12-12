@@ -10,7 +10,7 @@ public class ClassTest {
 		Class pClass2 = Person.class; // class 파일 이름을 Class 변수에 직접 대입
 		System.out.println(pClass2.getName());
 		
-		Class pClass3 = Class.forName("classex.Person"); // Class.forName("클래스 이름") 메소드 사용 (!예외처리 필수)
+		Class pClass3 = Class.forName("classex.Person"); // Class.forName("패키지명.클래스명") 메소드 사용 (!매개변수는 문자열. 해당 메소드 예외처리 필수)
 		System.out.println(pClass3.getName());
 	}
 }
