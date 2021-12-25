@@ -1,11 +1,13 @@
 package collection;
 
-public class Member implements Comparable<Member> {
+import java.util.Comparator;
+
+public class Member2 implements Comparator<Member2> {
 	// 속성
 	private int memberId;
 	private String memberName;
 	
-	public Member(int memberId, String memberName) {
+	public Member2(int memberId, String memberName) {
 		this.memberId = memberId;
 		this.memberName = memberName;
 	}
@@ -40,8 +42,8 @@ public class Member implements Comparable<Member> {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof Member) {
-			Member member = (Member)obj;
+		if (obj instanceof Member2) {
+			Member2 member = (Member2)obj;
 			if(this.memberId == member.memberId) // 매개변수로 받은 회원 아이디가 자신의 회원 아이디와 같다면 true 반환
 				return true;
 			else 
@@ -50,16 +52,11 @@ public class Member implements Comparable<Member> {
 		return false;
 	}
 
-	// compareTo() 메소드 재정의
-	// 추가한 회원 아이디와 매개변수로 받은 회원 아이디를 비교 
+	// compare() 메소드 재정의
+	// 전달받은 두 매개변수 비교 
 	@Override
-	public int compareTo(Member member) {
-		// 오름차순
-		// 내림차순으로 정렬하기 위해 반환 값을 음수로 만들어야 한다. / * (-1)
-//		return (this.memberId - member.memberId);
-		
-		// 출력 결과 : 회원 이름 오름차순
-		return this.memberName.compareTo(member.memberName);
+	public int compare(Member2 mem1, Member2 mem2) {
+		return mem1.getMemberId() - mem2.getMemberId();
 	}
 	
 	
