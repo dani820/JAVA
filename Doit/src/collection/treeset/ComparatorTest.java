@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
+// 내림차순 정렬
 class MyCompare implements Comparator<String> {
 	@Override
 	public int compare(String s1, String s2) {
