@@ -1,4 +1,4 @@
-package others;
+package stream.others;
 
 import java.util.Scanner;
 
