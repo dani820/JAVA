@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class FileInputStreamTest2 {
 	public static void main(String[] args) {
-		try (FileInputStream fis = new FileInputStream("input.txt")) {
+		try (FileInputStream fis = new FileInputStream("reader.txt")) {
 			
 			int i;
 			// i 값이 -1(파일 끝)이 아닌 동안
