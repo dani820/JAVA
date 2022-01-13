@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import grade.BasicEvaluation;
 import grade.GradeEvaluation;
 import grade.MajorEvaluation;
+import grade.PassFailEvaluation;
 import school.School;
 import school.Score;
 import school.Student;
@@ -55,29 +56,35 @@ public class GenerateGradeReport {
 			buffer.append(" | ");
 			
 			// 학생별 수강 과목 학점 계산
-			getScoreGrade(student, subject.getSubjectId());
+			getScoreGrade(student, subject);
 			
 			buffer.append("\n");
 			buffer.append(LINE);
 		}
 	}
 	
-	public void getScoreGrade(Student student, int subjectId) {
+	public void getScoreGrade(Student student, Subject subject) {
 		ArrayList<Score> scoreList = student.getScoreList();
 		int majorId = student.getMajorSubject().getSubjectId();
 		
 		// 학점 평가 클래스 배열 정의 
 		// GradeEvaluation 형으로 선언하여 인스턴스 생성
-		GradeEvaluation[] gradeEvaluation = {new BasicEvaluation(), new MajorEvaluation()};
+		GradeEvaluation[] gradeEvaluation = {new BasicEvaluation(), new MajorEvaluation(), new PassFailEvaluation()};
 		
 		for(int i = 0; i < scoreList.size(); i++) {
 			Score score = scoreList.get(i);
-			if(score.getSubject().getSubjectId() == subjectId) { // 학점 산출할 과목
+			if(score.getSubject().getSubjectId() == subject.getSubjectId()) { // 학점 산출할 과목
 				String grade;
-				if(score.getSubject().getSubjectId() == majorId) { // 필수 과목인 경우
-					grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
+				
+				if(subject.getGradeType() == Define.PF_TYPE) {
+					grade = gradeEvaluation[Define.PF_TYPE].getGrade(score.getPoint());
 				}else {
-					grade = gradeEvaluation[Define.AB_TYPE].getGrade(score.getPoint());
+					if(score.getSubject().getSubjectId() == majorId) { // 필수 과목인 경우
+						grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
+					}else {
+						grade = gradeEvaluation[Define.AB_TYPE].getGrade(score.getPoint());
+					}
+					
 				}
 				
 				buffer.append(score.getPoint());

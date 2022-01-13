@@ -46,7 +46,7 @@ public class Subject {
 		return gradeType;
 	}
 	
-	public void setGradeType(int graderType) {
+	public void setGradeType(int gradeType) {
 		this.gradeType = gradeType;
 	}
 	
